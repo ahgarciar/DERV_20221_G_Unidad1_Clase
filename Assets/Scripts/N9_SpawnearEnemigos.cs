@@ -41,20 +41,23 @@ public class N9_SpawnearEnemigos : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Entrando a colision con: " + collision.gameObject.name);
-        GameObject gameObject = collision.gameObject;
+        GameObject game_Object = collision.gameObject;
 
-        if (gameObject.tag.Equals("Enemy"))
+        if (game_Object.tag.Equals("Enemy"))
         {
-            Destroy(gameObject);
+            string nombreObjColision = game_Object.name;
+            Debug.Log("Nombre: " + nombreObjColision);
+
+            Destroy(game_Object);
             contadorEnemigosDerrotados++;
             texto_EnemigoScore.text = contadorEnemigosDerrotados.ToString();
 
             sse.SpawnearEnemigo();
 
         }
-        else if (gameObject.tag.Equals("PowerUp"))
+        else if (game_Object.tag.Equals("PowerUp"))
         {
-            Destroy(gameObject);
+            Destroy(game_Object);
             contadorPowerUpsObtenidos++;
             
             refScriptTiempo.tiempoRestante += 10;
