@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class N6_ControladorTiempo : MonoBehaviour
 {
+    [SerializeField]
+    public TextMeshProUGUI scoreEnemigos;
+
+    [SerializeField]
+    public TextMeshProUGUI scorePotenciadores;
+
+
     public int tiempoRestante;
 
     [SerializeField]
@@ -30,6 +37,15 @@ public class N6_ControladorTiempo : MonoBehaviour
             tiempoRestante--;
             yield return new WaitForSeconds(1.0f);
         }
-        SceneManager.LoadScene("P5_EscenaGameOver");
+
+        ///El tiempo termino:
+        ///
+        string enemigos = scoreEnemigos.text;
+        string potenciadores = scorePotenciadores.text;
+
+        PlayerPrefs.SetString("enemigos", enemigos);
+        PlayerPrefs.SetString("potenciadores", potenciadores);
+
+        SceneManager.LoadScene("P10_EscenaGameOver_V2");
     }
 }

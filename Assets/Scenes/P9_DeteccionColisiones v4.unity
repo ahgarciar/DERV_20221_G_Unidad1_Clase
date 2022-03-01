@@ -2153,6 +2153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77b8c5a90194034290238913985ee9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreEnemigos: {fileID: 767752400}
+  scorePotenciadores: {fileID: 285724331}
   tiempoRestante: 0
   tiempo: {fileID: 1236950901}
 --- !u!4 &2004970146
