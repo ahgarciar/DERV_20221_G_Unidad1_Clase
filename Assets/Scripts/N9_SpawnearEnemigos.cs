@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -47,6 +48,13 @@ public class N9_SpawnearEnemigos : MonoBehaviour
         {
             string nombreObjColision = game_Object.name;
             Debug.Log("Nombre: " + nombreObjColision);
+
+            //indexSpawnPorDesbloquear
+            char temp = nombreObjColision[nombreObjColision.Length - 1];
+            int indexSpawn = temp - 48;
+            Debug.Log(indexSpawn);
+
+            
 
             Destroy(game_Object);
             contadorEnemigosDerrotados++;
