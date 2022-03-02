@@ -4,6 +4,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/*
+PARA OBTENER REFERENCIAS A UN SCRIPT:
+        Script scriptRef;  //Script al que se quiere accesar    
+
+
+    OPCION 1 , CUANDO ESTAN EN EL MISMO GAMEOBJECT:
+        scritRef = GETCOMPONENT<NOMBRE_SCRIPT>();
+
+    OPCION 2 , CUANDO ESTAN DIFERENTE GAMEOBJECT:
+        [SerializeField]
+        GameObject NOMBREGAMEOBJECT;    //Se vincula el gameobject por inspector
+
+        scritRef = NOMBREGAMEOBJECT.GETCOMPONENT<NOMBRE_SCRIPT>();
+*/
 public class N9_SpawnearEnemigos : MonoBehaviour
 {
     [SerializeField]
@@ -51,10 +65,10 @@ public class N9_SpawnearEnemigos : MonoBehaviour
 
             //indexSpawnPorDesbloquear
             char temp = nombreObjColision[nombreObjColision.Length - 1];
-            int indexSpawn = temp - 48;
+            int indexSpawn = temp - 48; //numero del spawn
             Debug.Log(indexSpawn);
 
-            
+            sse.posSpawners[indexSpawn-1] = 0; //desbloquear posicion
 
             Destroy(game_Object);
             contadorEnemigosDerrotados++;

@@ -37,7 +37,7 @@ public class ScriptSpawnEnemy : MonoBehaviour
         */
         
 
-        enemigo.gameObject.name = "Enemigo_" + cont.ToString() + "_" + pos.ToString();
+        enemigo.gameObject.name = "Enemigo_" + cont.ToString() + "_" + (pos+1).ToString();
         cont++;
 
     }
